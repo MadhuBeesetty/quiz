@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
+import StartButton from './Components/StartButton';
 import './App.css';
 
 const App = () => {
 
   const [topic, setTopic] = useState('car');
 
-const change = (event) => {
-  setTopic(event.target.value);
-};
+  const change = (event) => {
+    setTopic(event.target.value);
+  };
 
   return (
     <div>
-    <label for="Quiz">Choose a Topic:</label>
-    <select id="quiz" name="quiz" onChange={change}>
-      <option value="math">Volvo XC90</option>
-      <option value="science">Saab 95</option>
-      <option value="geography">Mercedes SLK</option>
-      <option value="fun">Audi TT</option>
-    </select>
-    <input type="submit" value="Submit" />
-    <p>this is the selected quiz {topic}</p>
+      <label for="Quiz">Choose a Topic:</label>
+      <select id="quiz" name="quiz" onChange={change}>
+        <option value="math">Maths</option>
+        <option value="science">Science</option>
+        <option value="geography">Geography</option>
+        <option value="Bonus">Bonus-Topic</option>
+      </select>
+      <p>this is the selected quiz {topic}</p>
+      <StartButton topic={topic} />
     </div>
   );
 }
