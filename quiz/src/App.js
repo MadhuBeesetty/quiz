@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const [topic, setTopic] = useState('car');
+
+const change = (event) => {
+  setTopic(event.target.value);
+};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <label for="Quiz">Choose a Topic:</label>
+    <select id="quiz" name="quiz" onChange={change}>
+      <option value="math">Volvo XC90</option>
+      <option value="science">Saab 95</option>
+      <option value="geography">Mercedes SLK</option>
+      <option value="fun">Audi TT</option>
+    </select>
+    <input type="submit" value="Submit" />
+    <p>this is the selected quiz {topic}</p>
     </div>
   );
 }
